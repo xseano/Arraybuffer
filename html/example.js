@@ -11,11 +11,6 @@ function onLoad()
     ws.onerror = close;
     ws.onmessage = message;
 
-    document.addEventListener("keydown", function(k)
-    {
-        msgText.innerHTML = "Sending " + k.keyCode + "..";
-    }, false);
-
     // dont do this but im lazy
     window.msgText = document.getElementById("message");
     msgText.innerHTML = "Connecting to " + ip + "..";
@@ -24,6 +19,11 @@ function onLoad()
 function open()
 {
     msgText.innerHTML = "Connected to " + ip + ", press any key!";
+
+    document.addEventListener("keydown", function(k)
+    {
+        msgText.innerHTML = "Sending " + k.keyCode + "..";
+    }, false);
 }
 
 function close()
