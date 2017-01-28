@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ws": "*",
     "cowsay": "^1.1.9"
   }
 }
