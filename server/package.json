@@ -1,6 +1,30 @@
 {
+  "name": "Arraybuffer",
+  "version": "1.0.0",
+  "description": "Example on how to use buffers to send pure WebSocket messages in JS",
+  "author": "Sean Oberoi",
+  "contributors": [
+    {
+      "name": "Sean Oberoi",
+      "email": "sean.o@mac.com"
+    }
+  ],
+  "scripts": {
+    "start": "./start.sh"
+  },
+  "main": "start.sh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xseano/Arraybuffer"
+  },
+  "bugs": {
+    "url": "https://github.com/xseano/Arraybuffer/issues"
+  },
   "dependencies": {
     "ws": "*",
-    "cowsay": "^1.1.9"
-  }
+    "cowsay": "^1.1.9",
+    "yarn": "^0.22.0"
+  },
+  "private": false,
+  "license": "Copyright (c) Sean Oberoi"
 }

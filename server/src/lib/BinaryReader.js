@@ -1,10 +1,3 @@
-﻿'use strict';
-
-/*
- * Copyright (c) 2017 Stas Darevskiy https://github.com/Stasadance
- * License: MIT License
- */
-
 function BinaryReader(buffer) {
     this._offset = 0;
     this._buffer = new Buffer(buffer);
@@ -16,6 +9,20 @@ BinaryReader.prototype.readUInt8 = function () {
     var value = this._buffer.readUInt8(this._offset);
     this._offset += 1;
     return value;
+};
+
+BinaryReader.prototype.readArray = function (ab) {
+    var binstr = Array.prototype.map.call(ab, function (ch) {
+        return String.fromCharCode(ch);
+    }).join('');
+    var escstr = binstr.replace(/(.)/g, function (m, p) {
+        var code = p.charCodeAt(0).toString(16).toUpperCase();
+        if (code.length < 2) {
+            code = '0' + code;
+        }
+        return '%' + code;
+    });
+    return decodeURIComponent(escstr);
 };
 
 BinaryReader.prototype.readInt8 = function () {
